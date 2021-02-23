@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace NotebookForm
 {
     public partial class frmLogin : Form
     {
+        UserManager userManager;
         public frmLogin()
         {
             InitializeComponent();
+            userManager = new UserManager(new EfUserDal());
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -26,15 +30,26 @@ namespace NotebookForm
         {
             try
             {
-                if (true)
+                if (userManager.LoginCheck(txtUserName.Text, txtPassword.Text))
                 {
-
+                    frmNotes frmNotes = new frmNotes();
+                    frmNotes.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Kullanıcı Bulunamadı");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void llblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegister frmRegister = new frmRegister();
+            frmRegister.ShowDialog();
         }
     }
 }

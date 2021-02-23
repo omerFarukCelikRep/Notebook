@@ -90,6 +90,7 @@ namespace NotebookForm
             this.llblSignUp.TabIndex = 4;
             this.llblSignUp.TabStop = true;
             this.llblSignUp.Text = "Sign Up";
+            this.llblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSignUp_LinkClicked);
             // 
             // pictureBox1
             // 

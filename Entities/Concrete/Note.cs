@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Note : IEntity
+    public class Note : BaseEntity
     {
-        public int NoteID { get; set; }
+        public string Title { get; set; }
+        public string NoteDetails { get; set; }
         public int UserID { get; set; }
         public User User { get; set; }
-        public string NoteHeader { get; set; }
-        public string NoteDetails { get; set; }
 
     }
 }

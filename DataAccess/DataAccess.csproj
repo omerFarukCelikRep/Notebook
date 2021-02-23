@@ -57,6 +57,8 @@
     <Compile Include="Concrete\EntityFramework\EfNoteDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPasswordDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mapping\PasswordMapping.cs" />
+    <Compile Include="Concrete\EntityFramework\Mapping\UserMapping.cs" />
     <Compile Include="Concrete\EntityFramework\NotebookContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

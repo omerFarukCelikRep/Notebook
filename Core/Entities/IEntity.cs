@@ -8,5 +8,8 @@ namespace Core.Entities
 {
     public interface IEntity
     {
+        int ID { get; set; }
+        bool IsActive { get; set; }
+        DateTime CreatedDate { get; set; }
     }
 }

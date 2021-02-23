@@ -34,9 +34,13 @@ namespace Business.Concrete
 
         public bool LoginCheck(string userName, string password)
         {
-            if (_userDal.GetAll().Any(u => u.UserName == userName && u.Password.))
+            if (_userDal.GetUserDetails().Any(u => u.UserName == userName && u.Password == password))
             {
-
+                return true;
+            }
+            else
+            {
+                throw new Exception("Kullanıcı Bulunamadı");
             }
         }
 

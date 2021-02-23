@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using DataAccess.Concrete.EntityFramework.Mapping;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,22 +16,15 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Note> Notes { get; set; }
         public NotebookContext() : base("name=notebookConnString")
         {
-            Database.SetInitializer<NotebookContext>(new CreateDatabaseIfNotExists<NotebookContext>());
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<User>().HasKey(s => s.UserID);
-            //modelBuilder.Entity<Password>().HasKey(s => s.PasswordID);
-            //modelBuilder.Entity<Note>().HasKey(s => s.NoteID);
-            //modelBuilder.Entity<User>().Map(m =>
-            //{
-            //    m.Properties(p => new { p.UserID, p.PasswordID, p.NoteID, p.UserName, p.FirstName, p.LastName, p.IsActive });
-            //    m.ToTable("Users");
-            //});
+            modelBuilder.Configurations.Add(new UserMapping());
 
 
-            
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

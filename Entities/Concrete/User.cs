@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class User : IEntity
+    public enum UserRole
     {
-        public int UserID { get; set; }
-        public int PasswordID { get; set; }
-        public Password Password { get; set; }
-        public int NoteID { get; set; }
-        public ICollection<Note> Notes { get; set; }
+        Admin = 1,
+        User
+    }
+    public class User : BaseEntity
+    {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
-        public bool IsActive { get; set; }
+        public UserRole Role { get; set; }
+        public ICollection<Password> Passwords { get; set; }
+        public ICollection<Note> Notes { get; set; }
     }
 }

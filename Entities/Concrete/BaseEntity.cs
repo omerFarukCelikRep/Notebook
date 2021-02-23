@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Password : BaseEntity
+    public abstract class BaseEntity : IEntity
     {
-        public string UserPassword { get; set; }
-        public int UserID { get; set; }
-        public User User { get; set; }
+        public int ID { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

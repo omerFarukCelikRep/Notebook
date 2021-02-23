@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\BaseEntity.cs" />
     <Compile Include="Concrete\Note.cs" />
     <Compile Include="Concrete\Password.cs" />
     <Compile Include="Concrete\User.cs" />

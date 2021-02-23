@@ -116,5 +116,23 @@
   <ItemGroup>
     <None Include="Resources\diskette %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{ad6b15fb-17a0-4d43-9936-30fcb729d31e}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{51EBB12C-681B-4A0D-851A-57CC2D52C59B}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{45b9f241-ef84-4be3-ac70-600f3ff776b2}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{1454e627-a055-4d55-b447-23ea9f706e81}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
